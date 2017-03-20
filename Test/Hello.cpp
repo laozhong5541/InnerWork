@@ -1,6 +1,9 @@
+#include<stdio.h>
 
-void main(void)
+int main(void)
 {
     int _i = 0;
-    _i ++;        
+    _i ++;
+	printf("aaa\n");
+    return 0;
 }

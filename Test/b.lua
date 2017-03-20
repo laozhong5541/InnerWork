@@ -1,1 +1,2 @@
-print(a)
+aa=9
+print(aa)

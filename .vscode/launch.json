@@ -2,37 +2,69 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python",
-            "type": "python",
-            "request": "launch",
-            "stopOnEntry": true,
-            "pythonPath": "C:/Users/zhongyixin/AppData/Local/Programs/Python/Python36-32/Python.exe",
-            "program": "${file}",
-            "cwd": "D:/Work/Git/InnerWork/Test",
-            "env": null,
-            "envFile": "${workspaceRoot}/.env",
-            "debugOptions": [
-                "WaitOnAbnormalExit",
-                "WaitOnNormalExit",
-                "RedirectOutput"
-            ]
-        },
-        {
-            "name": "C++ Launch (Windows)",
-            "type": "cppvsdbg",
+            "name": "C++ Launch",
+            "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceRoot}/a.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceRoot}",
             "environment": [],
-            "externalConsole": false
+            "externalConsole": true,
+            "linux": {
+                "MIMode": "gdb",
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    }
+                ]
+            },
+            "osx": {
+                "MIMode": "lldb"
+            },
+            "windows": {
+                "MIMode": "gdb",
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    }
+                ]
+            }
         },
+        "miDebuggerPath": "c:\\mingw\\bin\\gdb.exe"
         {
-            "name": "C++ Attach (Windows)",
-            "type": "cppvsdbg",
+            "name": "C++ Attach",
+            "type": "cppdbg",
             "request": "attach",
-            "processId": "${command.pickProcess}"
+            "program": "enter program name, for example ${workspaceRoot}/a.out",
+            "processId": "${command:pickProcess}",
+            "linux": {
+                "MIMode": "gdb",
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    }
+                ]
+            },
+            "osx": {
+                "MIMode": "lldb"
+            },
+            "windows": {
+                "MIMode": "gdb",
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    }
+                ]
+            }
         }
     ]
 }
