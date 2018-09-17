@@ -2,6 +2,35 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "lua launch",
+            "type": "lua",
+            "request": "launch",
+            "stopOnEntry": true,
+            "program": "${workspaceRoot}/main.lua",
+            "cwd": "${workspaceRoot}",
+            "path": "${workspaceRoot}/?.lua",
+            "cpath": "${workspaceRoot}/?.dll",
+            "arg": [],
+            "consoleCoding": "utf8"
+        },
+        {
+            "name": "lua launch process",
+            "type": "lua",
+            "request": "launch",
+            "stopOnEntry": true,
+            "runtimeExecutable": "${workspaceRoot}/lua.exe",
+            "runtimeArgs": "${workspaceRoot}/main.lua",
+            "consoleCoding": "utf8"
+        },
+        {
+            "name": "lua attach",
+            "type": "lua",
+            "request": "attach",
+            "stopOnEntry": true,
+            "ip": "localhost",
+            "port": 4278
+        },
+        {
             "name": "Python",
             "type": "python",
             "request": "launch",
